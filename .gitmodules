@@ -1,0 +1,3 @@
+[submodule "Starter Files/Starter"]
+	path = Starter Files/Starter
+	url = git@github.com:wesbos/JavaScript30.git
