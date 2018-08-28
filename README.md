@@ -31,3 +31,23 @@ const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 De tal manera que la variable _audio_ hará referencia al primer elemento
 que coincida con algún atributo igual al código de tecla (así mismo, la
 variable _key_)
+
+
+### Reto 02 - Clock
+
+El método Date() retorna el tiempo actual de la máquina. Este método
+es empleado para realizar operaciones de rotaciones en las manecillas
+del documento.
+
+E.g.
+
+```javascript
+const seconds = now.getSeconds();
+```
+En los atributos CSS, `transform` permite modifica desde el inicio la rotación
+del elemento, así como `transform-origin` reubica el centro/eje del elemento.
+
+```javascript
+transform: rotate(90deg);
+transform-origin: 100%;
+```
