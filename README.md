@@ -51,3 +51,30 @@ del elemento, así como `transform-origin` reubica el centro/eje del elemento.
 transform: rotate(90deg);
 transform-origin: 100%;
 ```
+
+
+### Reto 03 - CSS Variables
+
+En el ejercicio se abordan las variables en CSS y la modificaciones de estas
+mediante JavaScript. Para la declaración de variables globales en CSS se
+emplea la pseudo-clase `:root`.
+
+E.g.
+
+```javascript
+:root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 10px;
+}
+```
+
+Para modificar una variable de CSS mediante JS, se edita la propiedad
+`documentElement` del objeto `document`, mediante el `data-attribute`
+de la propiedad de CSS a modificar.
+
+E.g.
+
+```javascript
+document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+```
