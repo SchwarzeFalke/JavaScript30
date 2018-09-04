@@ -1,0 +1,105 @@
+<!-- @Author: schwarze_falke
+@Date: 2018-09-03T21:12:03-05:00
+@Last modified by: schwarze_falke
+@Last modified time: 2018-09-03T21:13:01-05:00 -->
+
+<!--
+Hacer este ejercicio
+Alumno
+- datos generales
+- calificaciones de diferentes materias
+- cada materia tiene dos calificaciones
+- la final de cada materia es la maxima
+- existe la manera de obtener el promedio del alumno
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>Ejercicio Alumno</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    'use strict';
+    var alumno;
+    class student {
+      constructor(student_name, student_lastname, career, email) {
+        this.student_name = student_name;
+        this.student_lastname = student_lastname;
+        this.career = career;
+        this.email = email;
+        this.subjectsArray = [];
+        this.average = 0;
+      }
+      submitGrades(subject1, subject2, subject3, subject4, subject5) {
+        this.subjectsArray[0] = subject1;
+        this.subjectsArray[1] = subject2;
+        this.subjectsArray[2] = subject3;
+        this.subjectsArray[3] = subject4;
+      }
+
+      averageSubjects() {
+        let sum = this.subjectsArray.reduce((previous, current) => current += previous);
+        this.average = sum / this.subjectsArray.length;
+      }
+    }
+
+    function submitFunction() {
+      var a = document.getElementById("fname").value;
+      var b = document.getElementById("flastname").value;
+      var c = document.getElementById("fcareer").value;
+      var d = document.getElementById("femail").value;
+
+      alumno = new student(a, b, c, d);
+
+      var w = document.getElementById("fsbj1").value;
+      var x = document.getElementById("fsbj2").value;
+      var y = document.getElementById("fsbj3").value;
+      var z = document.getElementById("fsbj4").value;
+
+      alumno.submitGrades(w, x, y, z);
+      alumno.averageSubjects();
+    }
+  </script>
+
+  <form name="form" onclick="return false;">
+    <p>
+      <input class="w3-input" type="text" id="fname">
+      <label>Nombre(s)</label></p>
+    <p>
+      <input class="w3-input" type="text" id="flastname">
+      <label>Apellido(s)</label></p>
+    <p>
+      <input class="w3-input" type="text" id="fcareer">
+      <label>Carrera</label></p>
+    <p>
+      <input class="w3-input" type="email" id="femail">
+      <label>E-mail</label></p>
+    <p>
+      <input class="w3-input" type="number" id="fsbj1">
+      <label>Matemáticas I</label></p>
+    <p>
+      <input class="w3-input" type="number" id="fsbj2">
+      <label>Programación Web</label></p>
+    <p>
+      <input class="w3-input" type="number" id="fsbj3">
+      <label>Ingeniería de Software</label></p>
+    <p>
+      <input class="w3-input" type="number" id="fsbj4">
+      <label>Bases de Datos</label></p>
+
+    <button onclick="submitFunction()">Aceptar</button>
+
+
+
+  </form>
+</body>
+
+</html>
